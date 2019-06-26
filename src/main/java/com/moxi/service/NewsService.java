@@ -11,6 +11,8 @@ import com.moxi.model.News;
 import com.moxi.util.Constant;
 	
 @Mapper
+@SuppressWarnings(value = "all")
+
 public interface NewsService {
 	
 	@Select("SELECT * FROM MOXI.NEWS WHERE ID = #{id};")

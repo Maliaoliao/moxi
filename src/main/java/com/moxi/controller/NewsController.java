@@ -41,8 +41,8 @@ public class NewsController {
 	
 	@RequestMapping("/admin/newsManage_{pageCurrent}_{pageSize}_{pageCount}")
 	public String newsManage(News news,@PathVariable Integer pageCurrent,@PathVariable Integer pageSize,@PathVariable Integer pageCount, Model model) {
-		
-		//判断
+		return "news/newsManage";
+		/*//判断
 		if(pageSize == 0) pageSize = 10;
 		if(pageCurrent == 0) pageCurrent = 1;
 		int rows = newsService.count(news);
@@ -67,7 +67,7 @@ public class NewsController {
 		model.addAttribute("pageHTML",pageHTML);
 		model.addAttribute("news",news);
 		
-		return "news/newsManage";
+		return "news/newsManage";*/
 	}
 	
 	
@@ -125,7 +125,7 @@ public class NewsController {
 		} else {
 			newsService.insert(news);
 		}
-		return "redirect:newsManage_0_0_0";
+		return "redirect:newsManage";
 	}
 	
 	@ResponseBody

@@ -19,38 +19,33 @@ import com.moxi.model.ResObject;
 import com.moxi.model.User;
 import com.moxi.util.Constant;
 
+/**
+ * The type App controller.
+ */
 @RestController
+@SuppressWarnings(value = "all")
 public class AppController {
 	
-	/*
-	 * GET请求
-	 */
+
 	@GetMapping("/app/login")
 	public ResObject<Object> login(User user) {
-		System.out.println("UserName :" + user.getUserName());
-		System.out.println("Password" + user.getPassword());
+		sout(user);
 		ResObject<Object> object = new ResObject<Object>(Constant.Code01, Constant.Msg01, user, null);
 		return object;
 	}
 	
-	/*
-	 * POST请求
-	 */
+
 	@PostMapping("/app/register")
 	public ResObject<Object> register(User user) {
-		System.out.println("UserName :" + user.getUserName());
-		System.out.println("Password" + user.getPassword());
+		sout(user);
 		ResObject<Object> object = new ResObject<Object>(Constant.Code01, Constant.Msg01, user, null);
 		return object;
 	}
 	
-	/*
-	 * 单文件上传
-	 */
+	@SuppressWarnings(value = "all")
 	@PostMapping("/app/upload")
 	public ResObject<Object> upload(User user,@RequestParam MultipartFile imageFile,HttpSession httpSession) {
-		System.out.println("UserName :" + user.getUserName());
-		System.out.println("Password" + user.getPassword());
+		sout(user);
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddHHmmss");
 		Date date = new java.util.Date();
 		String strDate = sdf.format(date);
@@ -69,10 +64,8 @@ public class AppController {
 	/*
 	 * 多文件上传
 	 */
-	@PostMapping("/app/uploads")
 	public ResObject<Object> uploads(User user, @RequestParam MultipartFile[] imageFile,HttpSession httpSession) {
-		System.out.println("UserName :" + user.getUserName());
-		System.out.println("Password" + user.getPassword());
+		sout(user);
 		for (MultipartFile file : imageFile) {
 			if (file.isEmpty()) {
 				System.out.println("文件未上传");
@@ -96,4 +89,8 @@ public class AppController {
 		return object;
 	}
 
+	public void sout(User user){
+		System.out.println("UserName :" + user.getUserName());
+		System.out.println("Password" + user.getPassword());
+	}
 }

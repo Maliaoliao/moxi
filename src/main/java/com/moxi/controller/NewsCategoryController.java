@@ -9,6 +9,7 @@ import java.util.List;
 import javax.servlet.http.HttpSession;
 
 import org.apache.commons.io.FileUtils;
+import org.aspectj.lang.ProceedingJoinPoint;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -27,6 +28,7 @@ import com.moxi.util.Constant;
 import com.moxi.util.PageUtil;
 
 @Controller
+
 public class NewsCategoryController {
 
 	@Autowired
@@ -43,7 +45,8 @@ public class NewsCategoryController {
 	 */
 	@RequestMapping("/admin/newsCategoryManage_{pageCurrent}_{pageSize}_{pageCount}")
 	public String newsCategoryManage(NewsCategory newsCategory,@PathVariable Integer pageCurrent,@PathVariable Integer pageSize,@PathVariable Integer pageCount, Model model) {
-		//判断
+		return "news/newsCategoryManage";
+		/*//判断
 		if(pageSize == 0) pageSize = 10;
 		if(pageCurrent == 0) pageCurrent = 1;
 		int rows = newsCategoryService.count(newsCategory);
@@ -59,7 +62,7 @@ public class NewsCategoryController {
 		String pageHTML = PageUtil.getPageContent("newsCategoryManage_{pageCurrent}_{pageSize}_{pageCount}?name="+newsCategory.getName(), pageCurrent, pageSize, pageCount);
 		model.addAttribute("pageHTML",pageHTML);
 		model.addAttribute("newsCategory",newsCategory);
-		return "news/newsCategoryManage";
+		return "news/newsCategoryManage";*/
 	}
 	
 	/**
@@ -70,10 +73,10 @@ public class NewsCategoryController {
 	 */
 	@GetMapping("/admin/newsCategoryEdit")
 	public String newsCategoryEditGet(Model model,NewsCategory newsCategory) {
-		if(newsCategory.getId()!=0){
+		/*if(newsCategory.getId()!=0){
 			NewsCategory newsCategoryT = newsCategoryService.findById(newsCategory);
 			model.addAttribute("newsCategory",newsCategoryT);
-		}
+		}*/
 		return "news/newsCategoryEdit";
 	}
 	
@@ -87,7 +90,7 @@ public class NewsCategoryController {
 	 */
 	@PostMapping("/admin/newsCategoryEdit")
 	public String newsCategoryEditPost(Model model,NewsCategory newsCategory, @RequestParam MultipartFile[] imageFile,HttpSession httpSession) {
-		for (MultipartFile file : imageFile) {
+		/*for (MultipartFile file : imageFile) {
 			if (file.isEmpty()) {
 				System.out.println("文件未上传");
 			} else {
@@ -111,13 +114,14 @@ public class NewsCategoryController {
 			newsCategoryService.update(newsCategory);
 		} else {
 			newsCategoryService.insert(newsCategory);
-		}
+		}*/
 		return "redirect:newsCategoryManage_0_0_0";
 	}
 	
 	@ResponseBody
 	@PostMapping("/admin/newsCategoryEditState")
 	public ResObject<Object> newsCategoryEditState(NewsCategory newsCategory) {
+
 		newsCategoryService.updateState(newsCategory);
 		ResObject<Object> object = new ResObject<Object>(Constant.Code01, Constant.Msg01, null, null);
 		return object;

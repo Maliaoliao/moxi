@@ -6,7 +6,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<title>MOXI</title>
+<title>农夫果园</title>
 
 <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" />
 <link th:href="@{/font-awesome/css/font-awesome.css}" rel="stylesheet" />
@@ -18,76 +18,76 @@
 
 <body>
     <div id="wrapper">
-    	<nav class="navbar-default navbar-static-side" role="navigation" th:include="nav :: navigation"></nav>
+    	<nav class="navbar-default navbar-static-side" role="navigation" th:include="nav::navigation"></nav>
 	    <div id="page-wrapper" class="gray-bg">
-        	<div class="border-bottom" th:include="header :: headerTop"></div>
+        	<div class="border-bottom" th:include="header::headerTop"></div>
             <div class="wrapper wrapper-content">
-            
+
         		<div class="row">
                     <div class="col-lg-3">
                         <div class="ibox float-e-margins">
                             <div class="ibox-title">
-                                <span class="label label-success pull-right">Monthly</span>
-                                <h5>Income</h5>
+                                <span class="label label-success pull-right">月</span>
+                                <h5>收益</h5>
                             </div>
                             <div class="ibox-content">
                                 <h1 class="no-margins">40 886,200</h1>
                                 <div class="stat-percent font-bold text-success">98% <i class="fa fa-bolt"></i></div>
-                                <small>Total income</small>
+                                <small>总收益额</small>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-3">
                         <div class="ibox float-e-margins">
                             <div class="ibox-title">
-                                <span class="label label-info pull-right">Annual</span>
-                                <h5>Orders</h5>
+                                <span class="label label-info pull-right">年</span>
+                                <h5>订单</h5>
                             </div>
                             <div class="ibox-content">
                                 <h1 class="no-margins">275,800</h1>
                                 <div class="stat-percent font-bold text-info">20% <i class="fa fa-level-up"></i></div>
-                                <small>New orders</small>
+                                <small>新订单</small>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-3">
                         <div class="ibox float-e-margins">
                             <div class="ibox-title">
-                                <span class="label label-primary pull-right">Today</span>
-                                <h5>Vistits</h5>
+                                <span class="label label-primary pull-right">今天</span>
+                                <h5>访客</h5>
                             </div>
                             <div class="ibox-content">
                                 <h1 class="no-margins">106,120</h1>
                                 <div class="stat-percent font-bold text-navy">44% <i class="fa fa-level-up"></i></div>
-                                <small>New visits</small>
+                                <small>新访客</small>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-3">
                         <div class="ibox float-e-margins">
                             <div class="ibox-title">
-                                <span class="label label-danger pull-right">Low value</span>
-                                <h5>User activity</h5>
+                                <span class="label label-danger pull-right">价值</span>
+                                <h5>用户中心</h5>
                             </div>
                             <div class="ibox-content">
                                 <h1 class="no-margins">80,600</h1>
                                 <div class="stat-percent font-bold text-danger">38% <i class="fa fa-level-down"></i></div>
-                                <small>In first month</small>
+                                <small>本月</small>
                             </div>
                         </div>
             		</div>
         		</div>
-			
+
         		<div class="row">
           			<div class="col-lg-12">
               			<div class="ibox float-e-margins">
 	                    	<div class="ibox-title">
-	                       		<h5>Orders</h5>
+	                       		<h5>订单</h5>
 	                            <div class="pull-right">
 	                                <div class="btn-group">
-	                                    <button type="button" class="btn btn-xs btn-white active">Today</button>
-	                                    <button type="button" class="btn btn-xs btn-white">Monthly</button>
-	                                    <button type="button" class="btn btn-xs btn-white">Annual</button>
+	                                    <button type="button" class="btn btn-xs btn-white active">日</button>
+	                                    <button type="button" class="btn btn-xs btn-white">月</button>
+	                                    <button type="button" class="btn btn-xs btn-white">年</button>
 	                                </div>
 	                            </div>
 	                       	</div>
@@ -102,7 +102,7 @@
 	                                    <ul class="stat-list">
 	                                    	<li>
 	                                            <h2 class="no-margins">2,346</h2>
-	                                            <small>Total orders in period</small>
+	                                            <small>期间总订单</small>
 	                                            <div class="stat-percent">48% <i class="fa fa-level-up text-navy"></i></div>
 	                                            <div class="progress progress-mini">
 	                                                <div style="width: 48%;" class="progress-bar"></div>
@@ -110,7 +110,7 @@
 	                                        </li>
 	                                        <li>
 	                                            <h2 class="no-margins ">4,422</h2>
-	                                            <small>Orders in last month</small>
+	                                            <small>上月总订单</small>
 	                                            <div class="stat-percent">60% <i class="fa fa-level-down text-navy"></i></div>
 	                                            <div class="progress progress-mini">
 	                                                <div style="width: 60%;" class="progress-bar"></div>
@@ -118,7 +118,7 @@
 	                                        </li>
 	                                        <li>
 	                                            <h2 class="no-margins ">9,180</h2>
-	                                            <small>Monthly income from orders</small>
+	                                            <small>每月订单收入</small>
 	                                            <div class="stat-percent">22% <i class="fa fa-bolt text-navy"></i></div>
 	                                            <div class="progress progress-mini">
 	                                                <div style="width: 22%;" class="progress-bar"></div>
@@ -137,7 +137,7 @@
           			<div class="col-lg-4">
                 		<div class="ibox float-e-margins">
                    			<div class="ibox-title">
-                                <h5>Messages</h5>
+                                <h5>消息中心</h5>
                                 <div class="ibox-tools">
                                     <a class="collapse-link">
                                         <i class="fa fa-chevron-up"></i>
@@ -220,11 +220,11 @@
 
                     <div class="col-lg-8">
                   		<div class="row">
-                  		
+
                             <div class="col-lg-6">
                                 <div class="ibox float-e-margins">
                                     <div class="ibox-title">
-                                        <h5>User project list</h5>
+                                        <h5>用户列表</h5>
                                         <div class="ibox-tools">
                                             <a class="collapse-link">
                                                 <i class="fa fa-chevron-up"></i>
@@ -238,10 +238,10 @@
                                         <table class="table table-hover no-margins">
                                             <thead>
                                             <tr>
-                                                <th>Status</th>
-                                                <th>Date</th>
-                                                <th>User</th>
-                                                <th>Value</th>
+                                                <th>状态</th>
+                                                <th>时间</th>
+                                                <th>用户</th>
+                                                <th>采购</th>
                                             </tr>
                                             </thead>
                                             <tbody>
@@ -295,7 +295,7 @@
                             <div class="col-lg-6">
                                 <div class="ibox float-e-margins">
                                     <div class="ibox-title">
-                                        <h5>Small todo list</h5>
+                                        <h5>代办列表</h5>
                                         <div class="ibox-tools">
                                             <a class="collapse-link">
                                                 <i class="fa fa-chevron-up"></i>
@@ -309,47 +309,31 @@
                                         <ul class="todo-list m-t small-list">
                                             <li>
                                                 <a href="#" class="check-link"><i class="fa fa-check-square"></i> </a>
-                                                <span class="m-l-xs todo-completed">Buy a milk</span>
+                                                <span class="m-l-xs todo-completed">吃饭</span>
 
                                             </li>
                                             <li>
                                                 <a href="#" class="check-link"><i class="fa fa-square-o"></i> </a>
-                                                <span class="m-l-xs">Go to shop and find some products.</span>
+                                                <span class="m-l-xs">睡觉</span>
 
                                             </li>
                                             <li>
                                                 <a href="#" class="check-link"><i class="fa fa-square-o"></i> </a>
-                                                <span class="m-l-xs">Send documents to Mike</span>
+                                                <span class="m-l-xs">打豆豆</span>
                                                 <small class="label label-primary"><i class="fa fa-clock-o"></i> 1 mins</small>
-                                            </li>
-                                            <li>
-                                                <a href="#" class="check-link"><i class="fa fa-square-o"></i> </a>
-                                                <span class="m-l-xs">Go to the doctor dr Smith</span>
-                                            </li>
-                                            <li>
-                                                <a href="#" class="check-link"><i class="fa fa-check-square"></i> </a>
-                                                <span class="m-l-xs todo-completed">Plan vacation</span>
-                                            </li>
-                                            <li>
-                                                <a href="#" class="check-link"><i class="fa fa-square-o"></i> </a>
-                                                <span class="m-l-xs">Create new stuff</span>
-                                            </li>
-                                            <li>
-                                                <a href="#" class="check-link"><i class="fa fa-square-o"></i> </a>
-                                                <span class="m-l-xs">Call to Anna for dinner</span>
                                             </li>
                                         </ul>
                                     </div>
                                 </div>
-                            </div>    
+                            </div>
                         </div>
-                        
-                        
+
+
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class="ibox float-e-margins">
                                     <div class="ibox-title">
-                                        <h5>Transactions worldwide</h5>
+                                        <h5>全球交易</h5>
                                         <div class="ibox-tools">
                                             <a class="collapse-link">
                                                 <i class="fa fa-chevron-up"></i>
@@ -365,10 +349,11 @@
                                                 <table class="table table-hover margin bottom">
                                                     <thead>
                                                     <tr>
-                                                        <th style="width: 1%" class="text-center">No.</th>
-                                                        <th>Transaction</th>
-                                                        <th class="text-center">Date</th>
-                                                        <th class="text-center">Amount</th>
+                                                        <th style="width: 1%" class="text-center">编号</th>
+                                                        <th>事务</th>
+                                                        <th class="text-center">时间</th>
+                                                        <th class="text-center">量</th>
+                                                        <th class="text-center">单位</th>
                                                     </tr>
                                                     </thead>
                                                     <tbody>
@@ -378,6 +363,7 @@
                                                             </td>
                                                         <td class="text-center small">16 Jun 2014</td>
                                                         <td class="text-center"><span class="label label-primary">$483.00</span></td>
+                                                        <td class="text-center small">吨</td>
 
                                                     </tr>
                                                     <tr>
@@ -431,7 +417,7 @@
         	<div class="footer" th:include="footer :: copyright"></div>
         </div>
     </div>
-	
+
     <!-- Mainly scripts -->
     <script th:src="@{/js/jquery-2.1.1.js}"></script>
     <script th:src="@{/js/bootstrap.min.js}"></script>
@@ -473,21 +459,21 @@
 
     <script>
         $(document).ready(function() {
-        	
+
             $('.chart').easyPieChart({
                 barColor: '#f8ac59',
                 scaleLength: 5,
                 lineWidth: 4,
                 size: 80
             });
-			
+
             $('.chart2').easyPieChart({
                 barColor: '#1c84c6',
                 scaleLength: 5,
                 lineWidth: 4,
                 size: 80
             });
-            
+
             var data2 = [
                 [gd(2012, 1, 1), 7], [gd(2012, 1, 2), 6], [gd(2012, 1, 3), 4], [gd(2012, 1, 4), 8],
                 [gd(2012, 1, 5), 9], [gd(2012, 1, 6), 7], [gd(2012, 1, 7), 5], [gd(2012, 1, 8), 4],
@@ -498,7 +484,7 @@
                 [gd(2012, 1, 25), 7], [gd(2012, 1, 26), 9], [gd(2012, 1, 27), 9], [gd(2012, 1, 28), 8],
                 [gd(2012, 1, 29), 5], [gd(2012, 1, 30), 8], [gd(2012, 1, 31), 25]
             ];
-            
+
             var data3 = [
                 [gd(2012, 1, 1), 800], [gd(2012, 1, 2), 500], [gd(2012, 1, 3), 600], [gd(2012, 1, 4), 700],
                 [gd(2012, 1, 5), 500], [gd(2012, 1, 6), 456], [gd(2012, 1, 7), 800], [gd(2012, 1, 8), 589],
@@ -509,10 +495,10 @@
                 [gd(2012, 1, 25), 786], [gd(2012, 1, 26), 666], [gd(2012, 1, 27), 888], [gd(2012, 1, 28), 900],
                 [gd(2012, 1, 29), 178], [gd(2012, 1, 30), 555], [gd(2012, 1, 31), 993]
             ];
-            
+
             var dataset = [
                 {
-                    label: "Number of orders",
+                    label: "订单量",
                     data: data3,
                     color: "#1ab394",
                     bars: {
@@ -522,9 +508,9 @@
                         lineWidth:0
                     }
 
-                }, 
+                },
                 {
-                    label: "Payments",
+                    label: "支付金额",
                     data: data2,
                     yaxis: 2,
                     color: "#1C84C6",
@@ -548,10 +534,10 @@
                     },
                 }
             ];
-            
+
             var options = {
                 xaxis: {
-                    mode: "time",
+                    mode: "时间",
                     tickSize: [3, "day"],
                     tickLength: 0,
                     axisLabel: "Date",
@@ -588,11 +574,11 @@
                     borderWidth: 0
                 }
             };
-            
+
             function gd(year, month, day) {
                 return new Date(year, month - 1, day).getTime();
             }
-            
+
             var previousPoint = null, previousLabel = null;
 
             $.plot($("#flot-dashboard-chart"), dataset, options);
