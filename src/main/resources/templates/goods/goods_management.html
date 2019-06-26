@@ -5,48 +5,45 @@
 
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <title>MOXI</title>
-
+    <title>xxx</title>
     <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" />
     <link th:href="@{/font-awesome/css/font-awesome.css}" rel="stylesheet" />
     <link th:href="@{/css/style.css}" rel="stylesheet" />
-
     <link th:href="@{/css/plugins/iCheck/custom.css}" rel="stylesheet"/>
     <link th:href="@{/css/plugins/footable/footable.core.css}" rel="stylesheet"/>
-
 </head>
-
 <body>
 <div id="wrapper">
+    <!--导航条-->
     <nav class="navbar-default navbar-static-side" role="navigation" th:include="nav :: navigation"></nav>
     <div id="page-wrapper" class="gray-bg">
+        <!--搜索篮-->
         <div class="border-bottom" th:include="header :: headerTop"></div>
+        <!--样式-->
         <div class="row wrapper border-bottom white-bg page-heading" th:fragment="headerNav">
             <div class="col-lg-10">
-                <h2>文章管理</h2>
+                <h2>商品管理</h2>
                 <ol class="breadcrumb">
                     <li>
                         <a href="#">首页</a>
                     </li>
                     <li>
-                        <a>内容管理</a>
+                        <a>商品管理</a>
                     </li>
                     <li class="active">
-                        <strong>文章管理</strong>
+                        <strong>商品管理</strong>
                     </li>
                 </ol>
             </div>
             <div class="col-lg-2">
             </div>
         </div>
-
         <div class="wrapper wrapper-content animated fadeInRight">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="ibox float-e-margins">
                         <div class="ibox-title">
-                            <h5>搜索&amp;操作</h5>
+                            <h5>商品维护</h5>
                             <div class="ibox-tools">
                                 <a class="collapse-link">
                                     <i class="fa fa-chevron-up"></i>
@@ -55,69 +52,44 @@
                         </div>
                         <div class="ibox-content" style="display: block;">
                             <form action="goods_management">
+
                                 <div class="row">
-                                    <div class="col-sm-3 m-b-xs">
-                                        <input id="title" name="title" placeholder="文章标题" class="form-control" type="text" th:value="${news.title}"/>
+                                    <div class="form-group">
+                                        <label for="exampleInputName21">商品名称</label>
+                                        <input id="exampleInputName21" name="title" class="form-control" type="text" th:value="${news.title}"/>
                                     </div>
-                                    <div class="col-sm-2 m-b-xs">
-                                        <select name="category" id="category" class="form-control" >
-                                            <option value="0" th:selected="${news.category==0}">--请选择文章分类--</option>
-                                            <option th:each="nc : ${newsCategoryList}" th:value="${nc.id}" th:text="${nc.name}" th:selected="${nc.id==news.category}">分类</option>
-                                        </select>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail22">商品类别</label>
+                                        <input id="exampleInputEmail22" name="title" class="form-control" type="text" th:value="${news.title}"/>
                                     </div>
-                                    <div class="col-sm-2 m-b-xs">
-                                        <select name="commendState" id="commendState" class="form-control">
-                                            <option value="0" th:selected="${news.commendState==0}">--请选择推荐状态--</option>
-                                            <option value="1" th:selected="${news.commendState==1}">正常</option>
-                                            <option value="2" th:selected="${news.commendState==2}">推荐</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-sm-2 m-b-xs">
-                                        <select name="orderBy" id="orderBy" class="form-control">
-                                            <option value="ADDDATE DESC" th:selected="${news.orderBy=='ADDDATE DESC'}">时间倒序</option>
-                                            <option value="SCORE DESC" th:selected="${news.orderBy=='SCORE DESC'}">综合热度</option>
-                                            <option value="COMMENTS DESC" th:selected="${news.orderBy=='COMMENTS DESC'}">评论数</option>
-                                            <option value="BROWSES DESC" th:selected="${news.orderBy=='BROWSES DESC'}">浏览数</option>
-                                            <option value="LIKES DESC" th:selected="${news.orderBy=='LIKES DESC'}">点赞数</option>
-                                            <option value="ADDDATE ASC" th:selected="${news.orderBy=='ADDDATE ASC'}">时间正序</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-sm-2 m-b-xs">
-                                        <button class="btn btn-primary btn-block" type="submit"><i class="fa fa-search"></i>&nbsp;&nbsp;&nbsp;&nbsp;<strong>搜索</strong></button>
-                                    </div>
+                                    <button onclick="addGoods()" class="btn btn-primary" style="margin-right:15px;" type="submit"><i class="fa fa-search"></i>&nbsp;&nbsp;&nbsp;<strong>搜索</strong></button>
+                                    <button class="btn btn-success" type="submit"><i class="fa fa-refresh"></i>&nbsp;&nbsp;&nbsp;<strong>重置</strong></button>
                                 </div>
                             </form>
-                            <div class="row">
-                                <div class="col-sm-6 m-b-xs">
-                                    <a th:href="@{newsEdit}" class="btn btn-white btn-sm" data-toggle="tooltip" data-placement="left" title="" data-original-title="Refresh inbox"><i class="fa fa-plus"></i>&nbsp;&nbsp;&nbsp;&nbsp;新增文章&nbsp;&nbsp;&nbsp;&nbsp;</a>
-                                </div>
-                                <div class="col-sm-6 m-b-xs">
-                                </div>
-                            </div>
-
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-12">
                     <div class="ibox float-e-margins">
                         <div class="ibox-title">
-                            <h5>文章列表</h5>
+                            <h5>商品列表</h5>
                             <div class="ibox-tools">
                                 <a class="collapse-link">
+                                    <button onclick="addGoods()" class="btn btn-default btn-xs" type="submit"><i class="fa fa-plus"></i><strong>新增</strong></button>
+                                    <button class="btn btn-danger btn-xs" type="submit"><i class="fa fa-times"></i><strong>删除</strong></button>
                                     <i class="fa fa-chevron-up"></i>
                                 </a>
                             </div>
                         </div>
                         <div class="ibox-content">
                             <div class="table-responsive">
-                                <table class=" table table-hover" data-page-size="10">
+                                <table class="table table-bordered" data-page-size="10">
                                     <thead>
                                     <tr>
-                                        <th width="5%">ID</th>
-                                        <th width="40%">标题 </th>
-                                        <th width="15%">分类</th>
+                                        <th width="5%">序号</th>
+                                        <th width="40%">名称 </th>
+                                        <th width="15%">类型</th>
                                         <th width="15%">添加时间</th>
-                                        <th width="10%">推荐状态</th>
                                         <th>操作</th>
                                     </tr>
                                     </thead>
@@ -155,62 +127,13 @@
     </div>
 </div>
 
-<!-- Mainly scripts -->
-<script th:src="@{/js/jquery-2.1.1.js}"></script>
-<script th:src="@{/js/bootstrap.min.js}"></script>
-<script th:src="@{/js/plugins/metisMenu/jquery.metisMenu.js}"></script>
-<script th:src="@{/js/plugins/slimscroll/jquery.slimscroll.min.js}"></script>
+<script>
 
-<!-- Peity -->
-<script th:src="@{/js/plugins/peity/jquery.peity.min.js}"></script>
-
-<!-- Custom and plugin javascript -->
-<script th:src="@{/js/inspinia.js}"></script>
-<script th:src="@{/js/plugins/pace/pace.min.js}"></script>
-
-<!-- iCheck -->
-<script th:src="@{/js/plugins/iCheck/icheck.min.js}"></script>
-
-<!-- Peity -->
-<script th:src="@{/js/demo/peity-demo.js}"></script>
-
-<!-- FooTable -->
-<script th:src="@{/js/plugins/footable/footable.all.min.js}"></script>
-
-<!-- common -->
-<script th:src="@{/js/common.js}"></script>
-
-<script th:inline="javascript">
-    var pageHTML = [[${pageHTML}]];
-    $(document).ready(function () {
-        $("#pageHTML").html(pageHTML);
-    });
-
-    /*<![CDATA[*/
-    function updateState(id,state,commendState){
-        var deleteTag;
-        if(state==2){
-            deleteTag = confirm("确定删除此条信息?");
-        } else {
-            deleteTag = true;
-        }
-        if(deleteTag){
-            $.ajax({
-                type: "POST",
-                url: "newsEditState?id="+id+"&state="+state+"&commendState="+commendState,
-                contentType: "application/json; charset=utf-8",
-                success: function(msg){
-                    window.location.reload();
-                },
-                error: function(){
-                    alert("系统异常！");
-                }
-            });
-        }
+    function addGoods(){
+        alert(111);
     }
-    /*]]>*/
-</script>
 
+</script>
 </body>
 
 </html>

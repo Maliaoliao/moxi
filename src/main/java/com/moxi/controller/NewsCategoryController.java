@@ -115,7 +115,7 @@ public class NewsCategoryController {
 		} else {
 			newsCategoryService.insert(newsCategory);
 		}*/
-		return "redirect:newsCategoryManage_0_0_0";
+		return "redirect:xxx";
 	}
 	
 	@ResponseBody
